@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111924'/%3E%3Ccircle cx='16' cy='9' r='4' fill='%23ffc857'/%3E%3Cpath d='M16 14v13M10 27h12' stroke='%239fb4c7' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <title>塔式太阳能定日镜场 3D 仿真</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- 简洁控制区：只保留演示所需操作 -->
+    <section class="control-panel" aria-label="仿真控制">
+      <h1>塔式光热定日镜场</h1>
+
+      <div class="button-row">
+        <button id="toggleBtn" class="primary" type="button">暂停追踪</button>
+        <button id="resetBtn" type="button">重置镜场</button>
+      </div>
+
+      <button id="speedBtn" class="speed-button" type="button">太阳速度：1×</button>
+
+      <div class="preset-row" role="group" aria-label="切换太阳位置">
+        <button type="button" data-sun-preset="morning">晨光</button>
+        <button type="button" data-sun-preset="noon">正午</button>
+        <button type="button" data-sun-preset="dusk">黄昏</button>
+      </div>
+
+      <label class="slider-row" for="elevationSlider">
+        <span>太阳高度角</span>
+        <output id="elevationValue">55°</output>
+        <input id="elevationSlider" type="range" min="15" max="80" step="1" value="55" />
+      </label>
+
+      <p class="hint">鼠标拖拽旋转 · 滚轮缩放 · 右键平移</p>
+    </section>
+
+    <a
+      class="credits-link"
+      href="/models/CREDITS.md"
+      target="_blank"
+      rel="noopener noreferrer"
+    >模型来源与许可</a>
+
+    <div id="loading" class="loading">
+      <div class="loading-card">正在加载低面数 GLB 模型…</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
